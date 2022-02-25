@@ -23,6 +23,7 @@ export default function Locations() {
 			<Box
 				sx={{
 					display: 'flex',
+					justifyContent: 'center',
 					flexWrap: 'wrap',
 					p: 1,
 					m: 3,

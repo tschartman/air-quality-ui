@@ -22,7 +22,7 @@ function Item(props) {
 const classes = {
     title: {
         textAlign: 'center',
-        marginLeft: '-80px'
+        marginLeft: '-95px'
     },
     subtitle: {
         textAlign: 'center',
@@ -80,10 +80,7 @@ export default function Measurements(props) {
                 }}
             >
                 <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        flexWrap: 'wrap',
-                        cursor: 'pointer'
+                    padding: '15px'
                     }}>
                     <ArrowBackIcon sx={{ fontSize: 80 }} style={{color: '#3f444a'}} onClick={() => {navigate('/')}}/>
                 </div>
