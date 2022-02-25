@@ -1,5 +1,7 @@
 import { useMemo, useCallback } from 'react'
 import { Chart } from 'react-charts'
+import Box from '@mui/material/Box';
+
 export default function MeasurementsChart(props) {
 	const data = [
 		{
@@ -25,7 +27,20 @@ export default function MeasurementsChart(props) {
 		],
 		[]
 	)
+
+	const styles = {
+		table: {
+			backgroundColor: '#BECDDE',
+			width: '90%',
+			height: '100%',
+			display: 'flex',
+			justifyContent: 'center',
+			alignContent: 'center',
+		}
+	}
+
 	return (
+		<Box style={styles.table}>
 			<Chart
 				options={{
 					data,
@@ -33,5 +48,6 @@ export default function MeasurementsChart(props) {
 					secondaryAxes
 				}}
 			/>
+		</Box>
 	);
 }

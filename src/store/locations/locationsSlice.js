@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import http from '../../http-service';
 
-export const getLocations = createAsyncThunk('locations/getLocations', async (thunkAPI) => {
-    const res = await http.get('locations?limit=100&page=1&offset=0&sort=desc&radius=1000&order_by=lastUpdated&dumpRaw=false')
+export const getLocations = createAsyncThunk('locations/getLocations', async (entity) => {
+    const res = await http.get(`locations?limit=100&page=1&offset=0&sort=desc&radius=1000&country_id=US&order_by=lastUpdated&entity=${entity}&dumpRaw=false`)
     return res
 })
 

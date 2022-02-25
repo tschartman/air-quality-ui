@@ -11,11 +11,15 @@ import  { getMeasurements, clearMeasurements } from '../../store/measurements/me
 
 const styles = {
   card: {
-    width: '300px',
-		height: '185px',
+    	width: '300px',
+		height: '250px',
 		backgroundColor: '#becdde',
 		color: (theme) => (theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800'),
+		display: 'flex',
+		flexDirection: 'column',
   },
+  cardActions: {
+  }
 }
 
 function Item(props) {
@@ -24,7 +28,6 @@ function Item(props) {
 		<Box
 			sx={{
 				m: 1,
-				alignContent: 'center',
 				...sx,
 			}}
 			{...other}
@@ -51,7 +54,8 @@ export default function Location(props) {
 						Sensor Type: {props.location.sensorType}
 					</Typography>
 				</CardContent>
-				<CardActions styles={{display: 'flex', justify: 'center'}}>
+				<div style={{ flexGrow: 1}} />
+				<CardActions styles={styles.cardActions}>
 					<Button size="small" onClick={() => {
 						dispatch(clearMeasurements())
 						dispatch(getMeasurements(props.location.id))

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import http from '../../http-service';
 
 export const getMeasurements = createAsyncThunk('measurements/getMeasurements', async (id) => {
-    const res = await http.get(`measurements?date_from=2000-01-01T00%3A00%3A00%2B00%3A00&date_to=2022-02-24T23%3A55%3A00%2B00%3A00&limit=100&page=1&offset=0&sort=desc&radius=1000&location_id=${id}&order_by=datetime`)
+    const res = await http.get(`measurements?limit=100&page=1&offset=0&sort=desc&radius=1000&location_id=${id}&order_by=datetime`)
     return res
 })
 
