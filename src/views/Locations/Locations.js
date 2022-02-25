@@ -63,23 +63,28 @@ export default function Locations() {
 				sx={{
 					display: 'flex',
 					justifyContent: 'center',
-					flexWrap: 'wrap',
-					height: '70vh',
-					overflow: 'auto',
-					backgroundColor: '#E0ECF9',
 					p: 1,
 					m: 3,
-					borderRadius: 1,
+					borderRadius: 3,
 				}}
 			>
-				
-			{
-			locations.length > 0 ?
-			locations.slice(page, page + itemsPerPage).map((location) => (
-				<Location location={location}></Location>
-			)) :
-			<h1>No Locations Found</h1>
-			}
+				<div style={{
+						width: '80%',
+						display: 'flex',
+						height: '70vh',
+						justifyContent: 'center',
+						flexWrap: 'wrap',
+						backgroundColor: '#DCE9F8',
+						overflow: 'auto',
+					}}>
+				{
+				locations.length > 0 ?
+				locations.slice(page, page + itemsPerPage).map((location) => (
+					<Location location={location}></Location>
+				)) :
+				<h1>No Locations Found</h1>
+				}
+				</div>
 			</Box>
 			<Box
 				sx={{

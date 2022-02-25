@@ -13,6 +13,7 @@ import dateFormat from "dateformat";
 const columns = [
 	{id: 'fulldate', label: 'Date'},
   { id: 'time', label: 'Time' },
+	{id: 'unit', label: 'Unit'},
   {
 		id: 'parameter',
 		label: 'Parameter',
@@ -27,11 +28,11 @@ const columns = [
   },
 ];
 
-function createData({value, date, parameter}) {
+function createData({value, date, parameter, unit}) {
 	const parsedDate = new Date(date.local)
 	const time = dateFormat(parsedDate, "h:MM", true);
 	const fulldate = dateFormat(parsedDate, 'fullDate')
-  return { value, parameter, fulldate, time};
+  return { value, parameter, fulldate, time, unit};
 }
 
 

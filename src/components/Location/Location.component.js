@@ -8,11 +8,12 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import  { getMeasurements, clearMeasurements } from '../../store/measurements/measurementsSlice';
+import dateFormat from "dateformat";
 
 const styles = {
   card: {
     	width: '300px',
-		height: '250px',
+		height: '300px',
 		backgroundColor: '#becdde',
 		color: (theme) => (theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800'),
 		display: 'flex',
@@ -48,10 +49,14 @@ export default function Location(props) {
 					<Typography sx={{ mb: 1.5 }} color="text.secondary">
 						{props.location.entity}
 					</Typography>
-					<Typography variant="body2">
-						Measurements: {props.location.measurements}
+					<Typography style={{ fontWeight: 600 }} variant="body">
+					    Measurements: {props.location.measurements}
+						<br />
 						<br />
 						Sensor Type: {props.location.sensorType}
+						<br/>
+						<br/>
+						Last Updated: {dateFormat(props.location.lastUpdated, 'fullDate')}
 					</Typography>
 				</CardContent>
 				<div style={{ flexGrow: 1}} />
